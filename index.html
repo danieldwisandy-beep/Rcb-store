@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -11,74 +11,48 @@ body{background:#f5f5f5}
 
 /* HEADER */
 .navbar{
-  display:flex;align-items:center;gap:10px;
-  background:#111;color:#fff;padding:12px
+  display:flex;gap:10px;align-items:center;
+  padding:12px;background:#111;color:#fff
 }
-.logo{font-size:18px;font-weight:bold}
+.logo{font-weight:bold;font-size:18px}
 .logo span{color:red}
 .navbar input{
-  flex:1;padding:8px;border:none;border-radius:6px
+  flex:1;padding:8px;border-radius:6px;border:none
 }
 .navbar a{color:#fff;text-decoration:none;font-size:14px}
 
 /* HERO */
 .hero{
   background:linear-gradient(135deg,#000,#b00000);
-  color:#fff;text-align:center;padding:50px 20px
+  color:#fff;text-align:center;padding:60px 20px
 }
 
 /* PRODUK */
 .products{padding:20px}
 .products h2{margin-bottom:15px}
 .product-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px
 }
 .card{
-  background:#fff;
-  padding:10px;
-  border-radius:10px;
-  box-shadow:0 2px 5px rgba(0,0,0,.1)
+  background:#fff;padding:10px;border-radius:10px
 }
-.card img{
-  width:100%;
-  border-radius:8px
-}
-.card h3{
-  font-size:14px;
-  margin:8px 0
-}
-.price{
-  color:red;
-  font-weight:bold;
-  margin-bottom:8px
-}
+.card img{width:100%;border-radius:8px}
+.card h3{font-size:14px;margin:8px 0}
+.price{color:red;font-weight:bold;margin-bottom:8px}
 .wa-btn{
-  display:block;
-  background:#25D366;
-  color:#fff;
-  text-align:center;
-  padding:8px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:14px
+  display:block;background:#25D366;color:#fff;
+  text-align:center;padding:8px;border-radius:6px;
+  text-decoration:none;font-weight:bold;font-size:14px
 }
 
 /* RIWAYAT */
 #historyList li{
-  list-style:none;
-  border-bottom:1px solid #ddd;
-  padding:8px 0
+  list-style:none;margin-bottom:10px;
+  padding-bottom:10px;border-bottom:1px solid #ddd
 }
 .clear-btn{
-  background:#b00000;
-  color:#fff;
-  border:none;
-  padding:8px 12px;
-  border-radius:6px;
-  margin-top:10px
+  background:#b00000;color:#fff;border:none;
+  padding:8px 12px;border-radius:6px;margin-top:10px
 }
 
 /* FLOATING WA */
@@ -96,157 +70,18 @@ body{background:#f5f5f5}
   font-size:26px;
   text-decoration:none;
   box-shadow:0 4px 10px rgba(0,0,0,.3);
-  z-index:999
+  z-index:999;
 }
 
 /* FOOTER */
 footer{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:20px;
-  margin-top:30px;
-  font-size:14px
+  background:#111;color:#fff;padding:20px;
+  margin-top:30px;font-size:14px;text-align:center
 }
 </style>
 </head>
 
 <body>
-
-<header class="navbar">
-  <div class="logo">RCB<span>Store</span></div>
-  <input type="text" placeholder="Cari produk RCB...">
-  <a href="#products">Produk</a>
-  <a href="#history">Riwayat</a>
-</header>
-
-<section class="hero">
-  <h1>RCB Racing Performance</h1>
-  <p>Sparepart Racing Original Malaysia</p>
-</section>
-
-<section class="products" id="products">
-<h2>Produk RCB</h2>
-
-<div class="product-grid">
-
-<div class="card">
-<img src="images/rcbs1fl14mm.jpeg">
-<h3>Master Rem RCB S1 FL 14 mm</h3>
-<p class="price">Rp 1.050.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Master Rem RCB S1 FL 14 mm','Rp 1.050.000')">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/rcbs1fl17mm.jpeg">
-<h3>Master Rem RCB S1 FL 17 mm</h3>
-<p class="price">Rp 1.350.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Master Rem RCB S1 FL 17 mm','Rp 1.350.000')">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/kaliperrcb2piston.jpeg">
-<h3>Kaliper RCB 2 Piston</h3>
-<p class="price">Rp 700.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Kaliper RCB 2 Piston','Rp 700.000')">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/kaliperrcb4piston.jpeg">
-<h3>Kaliper RCB 4 Piston</h3>
-<p class="price">Rp 1.200.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Kaliper RCB 4 Piston','Rp 1.200.000')">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/velgrcb511.jpeg">
-<h3>Velg RCB 511</h3>
-<p class="price">Rp 1.850.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Velg RCB 511','Rp 1.850.000')">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/brakehose.jpeg">
-<h3>Brake Hose RCB</h3>
-<p class="price">Rp 230.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Brake Hose RCB','Rp 230.000')">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/underbonemxking.jpeg">
-<h3>Underbone RCB MX King</h3>
-<p class="price">Rp 2.200.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank"
-onclick="saveHistory('Underbone RCB MX King','Rp 2.200.000')">Beli via WhatsApp</a>
-</div>
-
-</div>
-</section>
-
-<section class="products" id="history">
-<h2>Riwayat Pembelian</h2>
-<ul id="historyList" style="background:#fff;padding:15px;border-radius:10px"></ul>
-<p id="totalBelanja" style="font-weight:bold;margin-top:10px">Total Belanja: Rp 0</p>
-<button class="clear-btn" onclick="clearHistory()">Hapus Riwayat</button>
-</section>
-
-<footer>
-RCB Store Indonesia<br>
-WhatsApp: 0822-8310-4456
-</footer>
-
-<a href="https://wa.me/6282283104456" class="wa-float" target="_blank">💬</a>
-
-<script>
-function saveHistory(nama,harga){
- let data=JSON.parse(localStorage.getItem('riwayat'))||[];
- data.push({nama,harga,tanggal:new Date().toLocaleString()});
- localStorage.setItem('riwayat',JSON.stringify(data));
- tampilRiwayat();
-}
-
-function tampilRiwayat(){
- let list=document.getElementById('historyList');
- let totalText=document.getElementById('totalBelanja');
- let data=JSON.parse(localStorage.getItem('riwayat'))||[];
- list.innerHTML='';
- let total=0;
-
- if(data.length===0){
-  list.innerHTML='<li>Belum ada pembelian</li>';
-  totalText.innerText='Total Belanja: Rp 0';
-  return;
- }
-
- data.forEach(item=>{
-  let angka=Number(item.harga.replace(/[^0-9]/g,''));
-  total+=angka;
-  let li=document.createElement('li');
-  li.innerHTML=`<b>${item.nama}</b><br>${item.harga}<br><small>${item.tanggal}</small>`;
-  list.appendChild(li);
- });
-
- totalText.innerText='Total Belanja: Rp '+total.toLocaleString('id-ID');
-}
-
-function clearHistory(){
- if(confirm('Hapus semua riwayat?')){
-  localStorage.removeItem('riwayat');
-  tampilRiwayat();
- }
-}
-
-document.addEventListener('DOMContentLoaded',tampilRiwayat);
-</script>
-
-</body>
-</html>
 
 <!-- HEADER -->
 <header class="navbar">
@@ -416,4 +251,4 @@ document.addEventListener('DOMContentLoaded',tampilRiwayat);
 </script>
 
 </body>
-</html>      
+</html>
