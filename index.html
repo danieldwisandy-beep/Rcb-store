@@ -50,7 +50,8 @@ body{background:#f2f2f2}
 .card h3{
   font-size:14px;margin:8px 0;min-height:36px
 }
-.price{color:#d00000;font-weight:bold;margin-bottom:8px}
+.price{color:#d00000;font-weight:bold}
+.sold{font-size:12px;color:#555;margin-bottom:8px}
 .wa-btn{
   background:#25D366;color:#fff;
   text-decoration:none;text-align:center;
@@ -60,16 +61,17 @@ body{background:#f2f2f2}
 
 /* RIWAYAT */
 #historyBox{
-  background:#fff;padding:15px;border-radius:10px
+  background:#fff;padding:15px;border-radius:10px;
+  margin-top:12px;display:none
 }
 #historyList li{
   list-style:none;padding:8px 0;
   border-bottom:1px solid #ddd;font-size:14px
 }
-.clear-btn{
-  margin-top:10px;background:#b00000;
-  color:#fff;border:none;
-  padding:8px 12px;border-radius:6px
+.toggle-btn,.clear-btn{
+  background:#b00000;color:#fff;
+  border:none;padding:8px 12px;
+  border-radius:6px;margin-top:10px
 }
 
 /* FLOAT WA */
@@ -115,6 +117,7 @@ footer{
 <img src="images/rcbs1fl14mm.jpeg">
 <h3>Master Rem RCB S1 FL 14 mm</h3>
 <p class="price">Rp 1.050.000</p>
+<p class="sold">Terjual 124 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Master Rem RCB S1 FL 14 mm','1.050.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -122,6 +125,7 @@ footer{
 <img src="images/rcbs1fl17mm.jpeg">
 <h3>Master Rem RCB S1 FL 17 mm</h3>
 <p class="price">Rp 1.350.000</p>
+<p class="sold">Terjual 98 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Master Rem RCB S1 FL 17 mm','1.350.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -129,6 +133,7 @@ footer{
 <img src="images/kaliperrcb2piston.jpeg">
 <h3>Kaliper RCB 2 Piston</h3>
 <p class="price">Rp 700.000</p>
+<p class="sold">Terjual 76 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Kaliper RCB 2 Piston','700.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -136,6 +141,7 @@ footer{
 <img src="images/kaliperrcb4piston.jpeg">
 <h3>Kaliper RCB 4 Piston</h3>
 <p class="price">Rp 1.200.000</p>
+<p class="sold">Terjual 64 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Kaliper RCB 4 Piston','1.200.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -143,6 +149,7 @@ footer{
 <img src="images/velgrcb511.jpeg">
 <h3>Velg RCB 511</h3>
 <p class="price">Rp 1.850.000</p>
+<p class="sold">Terjual 41 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Velg RCB 511','1.850.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -150,6 +157,7 @@ footer{
 <img src="images/brakehose.jpeg">
 <h3>Brake Hose RCB</h3>
 <p class="price">Rp 230.000</p>
+<p class="sold">Terjual 150 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Brake Hose RCB','230.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -157,6 +165,7 @@ footer{
 <img src="images/underbonemxking.jpeg">
 <h3>Underbone RCB MX King / Y15ZR</h3>
 <p class="price">Rp 2.200.000</p>
+<p class="sold">Terjual 33 pcs</p>
 <a class="wa-btn" onclick="buyProduct('Underbone RCB MX King','2.200.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
@@ -166,6 +175,8 @@ footer{
 <!-- RIWAYAT -->
 <section class="products" id="riwayat">
 <h2>Riwayat Pembelian</h2>
+<button class="toggle-btn" onclick="toggleHistory()">Tampilkan / Sembunyikan Riwayat</button>
+
 <div id="historyBox">
 <ul id="historyList"></ul>
 <button class="clear-btn" onclick="clearHistory()">Hapus Riwayat</button>
@@ -189,7 +200,6 @@ const defaultHistory = [
   "Kaliper RCB 4 Piston — 2 pcs"
 ];
 
-// ISI RIWAYAT JIKA MASIH KOSONG
 if(!localStorage.getItem("history")){
   localStorage.setItem("history", JSON.stringify(defaultHistory));
 }
@@ -206,6 +216,11 @@ function renderHistory(){
   const list = document.getElementById("historyList");
   const history = JSON.parse(localStorage.getItem("history")) || [];
   list.innerHTML = history.map(i=>`<li>${i}</li>`).join("");
+}
+
+function toggleHistory(){
+  const box = document.getElementById("historyBox");
+  box.style.display = box.style.display === "none" ? "block" : "none";
 }
 
 function clearHistory(){
