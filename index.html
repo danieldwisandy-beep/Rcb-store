@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RCB Racing Performance</title>
+<title>RCB Malaysia Store</title>
 
 <style>
 *{
@@ -13,7 +13,7 @@
   font-family:Arial, sans-serif;
 }
 body{
-  background:#f3f3f3;
+  background:#f4f4f4;
 }
 
 /* NAVBAR */
@@ -22,43 +22,32 @@ body{
   color:#fff;
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:12px;
+  gap:15px;
+  padding:12px 20px;
 }
 .logo{
   display:flex;
   align-items:center;
   gap:8px;
   font-weight:bold;
+  font-size:18px;
 }
 .logo img{
   height:36px;
 }
-.navbar a{
+.navbar nav a{
   color:#fff;
   text-decoration:none;
+  margin-left:10px;
   font-size:14px;
 }
 
 /* HERO */
 .hero{
-  position:relative;
   background:linear-gradient(135deg,#000,#b00000);
   color:#fff;
   text-align:center;
-  padding:70px 20px;
-  overflow:hidden;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url("images/logorcb.png") center/200px no-repeat;
-  opacity:0.15;
-}
-.hero h1,
-.hero p{
-  position:relative;
+  padding:80px 20px;
 }
 .hero h1{
   font-size:26px;
@@ -68,57 +57,37 @@ body{
   font-size:14px;
 }
 
-/* PRODUK */
-.products{
-  padding:20px;
+/* CONTENT */
+.section{
+  padding:40px 20px;
 }
-.products h2{
+.section h2{
   margin-bottom:15px;
 }
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-.card{
-  background:#fff;
-  padding:10px;
-  border-radius:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,.1);
-}
-.card img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  border-radius:8px;
-}
-.card h3{
-  font-size:14px;
-  margin:8px 0;
-}
-.price{
-  color:#d00000;
-  font-weight:bold;
-}
-.wa-btn{
-  display:block;
-  margin-top:8px;
-  background:#25D366;
+
+/* BUTTON */
+.btn{
+  background:#b00000;
   color:#fff;
-  text-align:center;
-  padding:8px;
+  border:none;
+  padding:10px 16px;
   border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
+  cursor:pointer;
+  font-size:14px;
+}
+.btn:hover{
+  opacity:0.9;
 }
 
-/* RIWAYAT PENJUALAN */
-#salesBox{
+/* RIWAYAT */
+#historyBox{
+  display:none;
   background:#fff;
+  margin-top:15px;
   padding:15px;
   border-radius:10px;
 }
-#salesBox ul li{
+#historyBox ul li{
   list-style:none;
   padding:8px 0;
   border-bottom:1px solid #ddd;
@@ -131,7 +100,7 @@ footer{
   color:#fff;
   text-align:center;
   padding:20px;
-  margin-top:30px;
+  margin-top:40px;
   font-size:14px;
 }
 </style>
@@ -143,73 +112,50 @@ footer{
 <header class="navbar">
   <div class="logo">
     <img src="images/logorcb.png" alt="Logo RCB">
-    <span>RCB Store</span>
+    <span>RCB Malaysia</span>
   </div>
-  <a href="#produk">Produk</a>
-  <a href="#penjualan">Riwayat Penjualan</a>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#riwayat">Riwayat Pembelian</a>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <h1>RCB Racing Performance</h1>
-  <p>Sparepart Motor Racing Original Malaysia</p>
+  <p>Sparepart Motor Original Malaysia</p>
 </section>
 
-<!-- PRODUK -->
-<section class="products" id="produk">
-<h2>Produk Unggulan</h2>
+<!-- RIWAYAT PEMBELIAN -->
+<section class="section" id="riwayat">
+  <h2>Riwayat Pembelian</h2>
+  <button class="btn" onclick="toggleHistory()">Lihat Riwayat Pembelian</button>
 
-<div class="product-grid">
-
-<div class="card">
-<img src="images/rcbs1fl14mm.jpeg">
-<h3>Master Rem RCB S1 FL 14 mm</h3>
-<p class="price">Rp 1.050.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/rcbs1fl17mm.jpeg">
-<h3>Master Rem RCB S1 FL 17 mm</h3>
-<p class="price">Rp 1.350.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/kaliperrcb4piston.jpeg">
-<h3>Kaliper RCB 4 Piston</h3>
-<p class="price">Rp 1.200.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
-</div>
-
-<div class="card">
-<img src="images/underbonemxking.jpeg">
-<h3>Underbone RCB Y15ZR</h3>
-<p class="price">Rp 2.200.000</p>
-<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
-</div>
-
-</div>
-</section>
-
-<!-- RIWAYAT PENJUALAN -->
-<section class="products" id="penjualan">
-<h2>Riwayat Penjualan</h2>
-
-<div id="salesBox">
-<ul>
-<li>Master Rem RCB S1 FL 14 mm — <strong>8 pcs</strong></li>
-<li>Master Rem RCB S1 FL 17 mm — <strong>5 pcs</strong></li>
-<li>Kaliper RCB 4 Piston — <strong>6 pcs</strong></li>
-<li>Underbone RCB Y15ZR — <strong>3 pcs</strong></li>
-</ul>
-</div>
+  <div id="historyBox">
+    <ul>
+      <li>Master Rem RCB S1 FL 14 mm — <strong>8 pcs</strong></li>
+      <li>Master Rem RCB S1 FL 17 mm — <strong>5 pcs</strong></li>
+      <li>Kaliper RCB 4 Piston — <strong>6 pcs</strong></li>
+      <li>Underbone RCB Y15ZR — <strong>3 pcs</strong></li>
+    </ul>
+  </div>
 </section>
 
 <footer>
-RCB Store Indonesia<br>
-WhatsApp: 0822-8310-4456
+RCB Malaysia Official Store<br>
+© 2026 All Rights Reserved
 </footer>
+
+<script>
+function toggleHistory(){
+  const box = document.getElementById("historyBox");
+  if(box.style.display === "none" || box.style.display === ""){
+    box.style.display = "block";
+  }else{
+    box.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
