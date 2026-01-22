@@ -12,9 +12,7 @@
   padding:0;
   font-family:Arial, sans-serif;
 }
-body{
-  background:#f4f4f4;
-}
+body{background:#f4f4f4}
 
 /* NAVBAR */
 .navbar{
@@ -30,11 +28,8 @@ body{
   align-items:center;
   gap:8px;
   font-weight:bold;
-  font-size:18px;
 }
-.logo img{
-  height:36px;
-}
+.logo img{height:36px}
 .navbar nav a{
   color:#fff;
   text-decoration:none;
@@ -49,35 +44,47 @@ body{
   text-align:center;
   padding:80px 20px;
 }
-.hero h1{
-  font-size:26px;
-  margin-bottom:8px;
-}
-.hero p{
-  font-size:14px;
-}
+.hero h1{font-size:26px;margin-bottom:8px}
+.hero p{font-size:14px}
 
-/* CONTENT */
-.section{
-  padding:40px 20px;
+/* SECTION */
+.section{padding:40px 20px}
+.section h2{margin-bottom:15px}
+
+/* PRODUK */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
-.section h2{
-  margin-bottom:15px;
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
 }
+.card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+}
+.card h3{font-size:14px;margin:10px 0}
+.price{color:#b00000;font-weight:bold}
 
 /* BUTTON */
 .btn{
-  background:#b00000;
+  margin-top:10px;
+  background:#25D366;
   color:#fff;
   border:none;
-  padding:10px 16px;
+  padding:10px;
   border-radius:6px;
   cursor:pointer;
-  font-size:14px;
+  font-weight:bold;
 }
-.btn:hover{
-  opacity:0.9;
-}
+.btn:hover{opacity:.9}
 
 /* RIWAYAT */
 #historyBox{
@@ -87,7 +94,7 @@ body{
   padding:15px;
   border-radius:10px;
 }
-#historyBox ul li{
+#historyList li{
   list-style:none;
   padding:8px 0;
   border-bottom:1px solid #ddd;
@@ -116,7 +123,8 @@ footer{
   </div>
   <nav>
     <a href="#">Home</a>
-    <a href="#riwayat">Riwayat Pembelian</a>
+    <a href="#products">Produk</a>
+    <a href="#riwayat">Riwayat</a>
   </nav>
 </header>
 
@@ -126,19 +134,51 @@ footer{
   <p>Sparepart Motor Original Malaysia</p>
 </section>
 
-<!-- RIWAYAT PEMBELIAN -->
-<section class="section" id="riwayat">
-  <h2>Riwayat Pembelian</h2>
-  <button class="btn" onclick="toggleHistory()">Lihat Riwayat Pembelian</button>
+<!-- PRODUK -->
+<section class="section" id="products">
+<h2>Produk</h2>
 
-  <div id="historyBox">
-    <ul>
-      <li>Master Rem RCB S1 FL 14 mm — <strong>8 pcs</strong></li>
-      <li>Master Rem RCB S1 FL 17 mm — <strong>5 pcs</strong></li>
-      <li>Kaliper RCB 4 Piston — <strong>6 pcs</strong></li>
-      <li>Underbone RCB Y15ZR — <strong>3 pcs</strong></li>
-    </ul>
-  </div>
+<div class="product-grid">
+
+<div class="card">
+<img src="images/rcbs1fl14mm.jpeg">
+<h3>Master Rem RCB S1 FL 14 mm</h3>
+<p class="price">Rp 1.050.000</p>
+<button class="btn" onclick="buy('Master Rem RCB S1 FL 14 mm')">Beli</button>
+</div>
+
+<div class="card">
+<img src="images/rcbs1fl17mm.jpeg">
+<h3>Master Rem RCB S1 FL 17 mm</h3>
+<p class="price">Rp 1.350.000</p>
+<button class="btn" onclick="buy('Master Rem RCB S1 FL 17 mm')">Beli</button>
+</div>
+
+<div class="card">
+<img src="images/kaliperrcb4piston.jpeg">
+<h3>Kaliper RCB 4 Piston</h3>
+<p class="price">Rp 1.200.000</p>
+<button class="btn" onclick="buy('Kaliper RCB 4 Piston')">Beli</button>
+</div>
+
+<div class="card">
+<img src="images/underbonemxking.jpeg">
+<h3>Underbone RCB Y15ZR</h3>
+<p class="price">Rp 2.200.000</p>
+<button class="btn" onclick="buy('Underbone RCB Y15ZR')">Beli</button>
+</div>
+
+</div>
+</section>
+
+<!-- RIWAYAT -->
+<section class="section" id="riwayat">
+<h2>Riwayat Pembelian</h2>
+<button class="btn" style="background:#b00000" onclick="toggleHistory()">Lihat Riwayat</button>
+
+<div id="historyBox">
+<ul id="historyList"></ul>
+</div>
 </section>
 
 <footer>
@@ -147,13 +187,26 @@ RCB Malaysia Official Store<br>
 </footer>
 
 <script>
+function buy(product){
+  let history = JSON.parse(localStorage.getItem("history")) || [];
+  let time = new Date().toLocaleString("id-ID");
+  history.unshift(time + " - " + product);
+  localStorage.setItem("history", JSON.stringify(history));
+  alert("Produk ditambahkan ke riwayat pembelian");
+  renderHistory();
+}
+
+function renderHistory(){
+  let history = JSON.parse(localStorage.getItem("history")) || [];
+  document.getElementById("historyList").innerHTML =
+    history.map(item => "<li>"+item+"</li>").join("");
+}
+
 function toggleHistory(){
   const box = document.getElementById("historyBox");
-  if(box.style.display === "none" || box.style.display === ""){
-    box.style.display = "block";
-  }else{
-    box.style.display = "none";
-  }
+  box.style.display = (box.style.display === "none" || box.style.display === "")
+    ? "block" : "none";
+  renderHistory();
 }
 </script>
 
