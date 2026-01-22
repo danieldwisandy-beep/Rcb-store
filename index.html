@@ -1,68 +1,215 @@
-<!-- PRODUK -->
-<section class="section" id="products">
-  <h2>Produk RCB Malaysia</h2>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RCB Racing Performance</title>
 
-  <div class="product-grid">
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
+body{
+  background:#f3f3f3;
+}
 
-    <div class="card">
-      <img src="images/rcbs1fl14mm.jpeg">
-      <h3>Master Rem RCB S1 FL 14 mm</h3>
-      <p class="price">Rp 1.050.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Master%20Rem%20RCB%20S1%20FL%2014mm" target="_blank">Beli via WhatsApp</a>
-    </div>
+/* NAVBAR */
+.navbar{
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:bold;
+}
+.logo img{
+  height:36px;
+}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
 
-    <div class="card">
-      <img src="images/rcbs1fl17mm.jpeg">
-      <h3>Master Rem RCB S1 FL 17 mm</h3>
-      <p class="price">Rp 1.350.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Master%20Rem%20RCB%20S1%20FL%2017mm" target="_blank">Beli via WhatsApp</a>
-    </div>
+/* HERO */
+.hero{
+  position:relative;
+  background:linear-gradient(135deg,#000,#b00000);
+  color:#fff;
+  text-align:center;
+  padding:70px 20px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/logorcb.png") center/200px no-repeat;
+  opacity:0.15;
+}
+.hero h1,
+.hero p{
+  position:relative;
+}
+.hero h1{
+  font-size:26px;
+  margin-bottom:8px;
+}
+.hero p{
+  font-size:14px;
+}
 
-    <div class="card">
-      <img src="images/kaliperrcb2piston.jpeg">
-      <h3>Kaliper RCB 2 Piston</h3>
-      <p class="price">Rp 850.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Kaliper%20RCB%202%20Piston" target="_blank">Beli via WhatsApp</a>
-    </div>
+/* PRODUK */
+.products{
+  padding:20px;
+}
+.products h2{
+  margin-bottom:15px;
+}
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.card{
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+.card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+}
+.card h3{
+  font-size:14px;
+  margin:8px 0;
+}
+.price{
+  color:#d00000;
+  font-weight:bold;
+}
+.wa-btn{
+  display:block;
+  margin-top:8px;
+  background:#25D366;
+  color:#fff;
+  text-align:center;
+  padding:8px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    <div class="card">
-      <img src="images/kaliperrcb4piston.jpeg">
-      <h3>Kaliper RCB 4 Piston</h3>
-      <p class="price">Rp 1.200.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Kaliper%20RCB%204%20Piston" target="_blank">Beli via WhatsApp</a>
-    </div>
+/* RIWAYAT PENJUALAN */
+#salesBox{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+}
+#salesBox ul li{
+  list-style:none;
+  padding:8px 0;
+  border-bottom:1px solid #ddd;
+  font-size:14px;
+}
 
-    <div class="card">
-      <img src="images/brakehose.jpeg">
-      <h3>Brake Hose RCB Racing</h3>
-      <p class="price">Rp 350.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Brake%20Hose%20RCB" target="_blank">Beli via WhatsApp</a>
-    </div>
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+  font-size:14px;
+}
+</style>
+</head>
 
-    <div class="card">
-      <img src="images/velgrcb511.jpeg">
-      <h3>Velg RCB 511 Racing</h3>
-      <p class="price">Rp 3.500.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Velg%20RCB%20511" target="_blank">Beli via WhatsApp</a>
-    </div>
+<body>
 
-    <div class="card">
-      <img src="images/underbonemxking.jpeg">
-      <h3>Underbone RCB Y15ZR / MX King</h3>
-      <p class="price">Rp 2.200.000</p>
-      <a class="btn" href="https://wa.me/6282283104456?text=Order%20Underbone%20RCB%20Y15ZR" target="_blank">Beli via WhatsApp</a>
-    </div>
-
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logorcb.png" alt="Logo RCB">
+    <span>RCB Store</span>
   </div>
+  <a href="#produk">Produk</a>
+  <a href="#penjualan">Riwayat Penjualan</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>RCB Racing Performance</h1>
+  <p>Sparepart Motor Racing Original Malaysia</p>
 </section>
 
-<!-- RIWAYAT PEMBELIAN -->
-<section class="section">
-  <h2>Riwayat Penjualan</h2>
-  <ul style="background:#fff;padding:15px;border-radius:10px">
-    <li>Master Rem RCB S1 FL 14 mm — 8 pcs</li>
-    <li>Master Rem RCB S1 FL 17 mm — 5 pcs</li>
-    <li>Kaliper RCB 4 Piston — 6 pcs</li>
-    <li>Underbone RCB Y15ZR — 3 pcs</li>
-  </ul>
+<!-- PRODUK -->
+<section class="products" id="produk">
+<h2>Produk Unggulan</h2>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="images/rcbs1fl14mm.jpeg">
+<h3>Master Rem RCB S1 FL 14 mm</h3>
+<p class="price">Rp 1.050.000</p>
+<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
+</div>
+
+<div class="card">
+<img src="images/rcbs1fl17mm.jpeg">
+<h3>Master Rem RCB S1 FL 17 mm</h3>
+<p class="price">Rp 1.350.000</p>
+<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
+</div>
+
+<div class="card">
+<img src="images/kaliperrcb4piston.jpeg">
+<h3>Kaliper RCB 4 Piston</h3>
+<p class="price">Rp 1.200.000</p>
+<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
+</div>
+
+<div class="card">
+<img src="images/underbonemxking.jpeg">
+<h3>Underbone RCB Y15ZR</h3>
+<p class="price">Rp 2.200.000</p>
+<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
+</div>
+
+</div>
 </section>
+
+<!-- RIWAYAT PENJUALAN -->
+<section class="products" id="penjualan">
+<h2>Riwayat Penjualan</h2>
+
+<div id="salesBox">
+<ul>
+<li>Master Rem RCB S1 FL 14 mm — <strong>8 pcs</strong></li>
+<li>Master Rem RCB S1 FL 17 mm — <strong>5 pcs</strong></li>
+<li>Kaliper RCB 4 Piston — <strong>6 pcs</strong></li>
+<li>Underbone RCB Y15ZR — <strong>3 pcs</strong></li>
+</ul>
+</div>
+</section>
+
+<footer>
+RCB Store Indonesia<br>
+WhatsApp: 0822-8310-4456
+</footer>
+
+</body>
+</html>
