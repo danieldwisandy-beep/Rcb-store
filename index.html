@@ -15,12 +15,8 @@ body{background:#f2f2f2}
   display:flex;align-items:center;gap:10px;
   padding:10px 12px
 }
-.navbar img{
-  height:40px
-}
-.logo-text{
-  font-weight:bold;font-size:18px
-}
+.navbar img{height:38px}
+.logo-text{font-weight:bold;font-size:18px}
 .logo-text span{color:red}
 .navbar input{
   flex:1;padding:8px;border:none;border-radius:6px
@@ -31,11 +27,11 @@ body{background:#f2f2f2}
 .hero{
   background:linear-gradient(135deg,#000,#b00000);
   color:#fff;text-align:center;
-  padding:50px 20px
+  padding:45px 20px
 }
 .hero img{
-  width:120px;
-  margin-bottom:15px
+  width:110px;
+  margin-bottom:12px
 }
 .hero h1{font-size:22px}
 .hero p{font-size:14px;margin-top:6px}
@@ -51,22 +47,20 @@ body{background:#f2f2f2}
 .card{
   background:#fff;border-radius:10px;padding:10px;
   box-shadow:0 2px 6px rgba(0,0,0,.1);
-  display:flex;flex-direction:column
 }
 .card img{
   width:100%;height:160px;
-  object-fit:cover;border-radius:8px;background:#eee
+  object-fit:cover;border-radius:8px
 }
-.card h3{
-  font-size:14px;margin:8px 0;min-height:36px
-}
+.card h3{font-size:14px;margin:8px 0}
 .price{color:#d00000;font-weight:bold}
 .sold{font-size:12px;color:#555;margin-bottom:8px}
 .wa-btn{
   background:#25D366;color:#fff;
   text-decoration:none;text-align:center;
   padding:8px;border-radius:6px;
-  font-weight:bold;font-size:14px
+  font-weight:bold;font-size:14px;
+  display:block
 }
 
 /* RIWAYAT */
@@ -78,10 +72,10 @@ body{background:#f2f2f2}
   list-style:none;padding:8px 0;
   border-bottom:1px solid #ddd;font-size:14px
 }
-.toggle-btn,.clear-btn{
+.toggle-btn{
   background:#b00000;color:#fff;
   border:none;padding:8px 12px;
-  border-radius:6px;margin-top:10px
+  border-radius:6px
 }
 
 /* FLOAT WA */
@@ -105,16 +99,18 @@ footer{
 
 <body>
 
+<!-- HEADER -->
 <header class="navbar">
-  <img src="images/logorcb.png" alt="Logo RCB">
+  <img src="images/logorcb.png">
   <div class="logo-text">RCB<span>Store</span></div>
   <input type="text" placeholder="Cari produk RCB...">
   <a href="#produk">Produk</a>
   <a href="#riwayat">Riwayat</a>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <img src="images/logorcb.png" alt="Logo RCB">
+  <img src="images/logorcb.png">
   <h1>RCB Racing Performance</h1>
   <p>Sparepart Racing Original Malaysia</p>
 </section>
@@ -157,6 +153,22 @@ footer{
 <a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
+<div class="card">
+<img src="images/velgrcb511.jpeg">
+<h3>Velg RCB 511</h3>
+<p class="price">Rp 1.850.000</p>
+<p class="sold">Terjual 42 pcs</p>
+<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
+</div>
+
+<div class="card">
+<img src="images/brakehose.jpeg">
+<h3>Brake Hose RCB</h3>
+<p class="price">Rp 230.000</p>
+<p class="sold">Terjual 89 pcs</p>
+<a class="wa-btn" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
+</div>
+
 </div>
 </section>
 
@@ -171,6 +183,8 @@ footer{
   <li>Master Rem RCB S1 FL 17 mm — 98 pcs</li>
   <li>Kaliper RCB 2 Piston — 76 pcs</li>
   <li>Kaliper RCB 4 Piston — 64 pcs</li>
+  <li>Velg RCB 511 — 42 pcs</li>
+  <li>Brake Hose RCB — 89 pcs</li>
 </ul>
 </div>
 </section>
