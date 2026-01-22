@@ -115,70 +115,49 @@ footer{
 <img src="images/rcbs1fl14mm.jpeg">
 <h3>Master Rem RCB S1 FL 14 mm</h3>
 <p class="price">Rp 1.050.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Master Rem RCB S1 FL 14 mm','1.050.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Master Rem RCB S1 FL 14 mm','1.050.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/rcbs1fl17mm.jpeg">
 <h3>Master Rem RCB S1 FL 17 mm</h3>
 <p class="price">Rp 1.350.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Master Rem RCB S1 FL 17 mm','1.350.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Master Rem RCB S1 FL 17 mm','1.350.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/kaliperrcb2piston.jpeg">
 <h3>Kaliper RCB 2 Piston</h3>
 <p class="price">Rp 700.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Kaliper RCB 2 Piston','700.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Kaliper RCB 2 Piston','700.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/kaliperrcb4piston.jpeg">
 <h3>Kaliper RCB 4 Piston</h3>
 <p class="price">Rp 1.200.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Kaliper RCB 4 Piston','1.200.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Kaliper RCB 4 Piston','1.200.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/velgrcb511.jpeg">
 <h3>Velg RCB 511</h3>
 <p class="price">Rp 1.850.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Velg RCB 511','1.850.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Velg RCB 511','1.850.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/brakehose.jpeg">
 <h3>Brake Hose RCB</h3>
 <p class="price">Rp 230.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Brake Hose RCB','230.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Brake Hose RCB','230.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/underbonemxking.jpeg">
 <h3>Underbone RCB MX King / Y15ZR</h3>
 <p class="price">Rp 2.200.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Underbone RCB MX King','2.200.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Underbone RCB MX King','2.200.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 </div>
@@ -201,6 +180,20 @@ WhatsApp: 0822-8310-4456
 <a href="https://wa.me/6282283104456" class="wa-float" target="_blank">💬</a>
 
 <script>
+// DATA RIWAYAT AWAL
+const defaultHistory = [
+  "Master Rem RCB S1 FL 14 mm — 8 pcs",
+  "Master Rem RCB S1 FL 17 mm — 5 pcs",
+  "Velg RCB 511 — 4 pcs",
+  "Brake Hose RCB — 9 pcs",
+  "Kaliper RCB 4 Piston — 2 pcs"
+];
+
+// ISI RIWAYAT JIKA MASIH KOSONG
+if(!localStorage.getItem("history")){
+  localStorage.setItem("history", JSON.stringify(defaultHistory));
+}
+
 function buyProduct(name, price){
   let history = JSON.parse(localStorage.getItem("history")) || [];
   const date = new Date().toLocaleString("id-ID");
@@ -208,17 +201,18 @@ function buyProduct(name, price){
   localStorage.setItem("history", JSON.stringify(history));
   renderHistory();
 }
+
 function renderHistory(){
   const list = document.getElementById("historyList");
   const history = JSON.parse(localStorage.getItem("history")) || [];
-  list.innerHTML = history.length
-    ? history.map(i=>`<li>${i}</li>`).join("")
-    : "<li>Belum ada pembelian</li>";
+  list.innerHTML = history.map(i=>`<li>${i}</li>`).join("");
 }
+
 function clearHistory(){
   localStorage.removeItem("history");
   renderHistory();
 }
+
 renderHistory();
 </script>
 
