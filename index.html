@@ -6,103 +6,156 @@
 <title>RCB Store Indonesia</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#f2f2f2}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
+body{
+  background:#f3f3f3;
+}
 
 /* HEADER */
 .navbar{
-  background:#111;color:#fff;
-  display:flex;align-items:center;gap:10px;
-  padding:12px
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
 }
-.logo{font-weight:bold;font-size:18px}
-.logo span{color:red}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:bold;
+}
+.logo img{
+  height:36px;
+}
 .navbar input{
-  flex:1;padding:8px;border:none;border-radius:6px
+  flex:1;
+  padding:8px;
+  border:none;
+  border-radius:6px;
 }
-.navbar a{color:#fff;text-decoration:none;font-size:14px}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
 
 /* HERO */
 .hero{
   background:linear-gradient(135deg,#000,#b00000);
-  color:#fff;text-align:center;padding:50px 20px
+  color:#fff;
+  text-align:center;
+  padding:50px 20px;
 }
-.hero h1{font-size:22px}
-.hero p{font-size:14px;margin-top:6px}
+.hero h1{
+  font-size:22px;
+}
+.hero p{
+  margin-top:6px;
+  font-size:14px;
+}
 
 /* PRODUK */
-.products{padding:20px}
-.products h2{margin-bottom:15px}
+.products{
+  padding:20px;
+}
+.products h2{
+  margin-bottom:15px;
+}
 .product-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px
+  gap:12px;
 }
 .card{
-  background:#fff;border-radius:10px;padding:10px;
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
   box-shadow:0 2px 6px rgba(0,0,0,.1);
-  display:flex;flex-direction:column
 }
 .card img{
-  width:100%;height:160px;
-  object-fit:cover;border-radius:8px;background:#eee
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
 }
 .card h3{
-  font-size:14px;margin:8px 0;min-height:36px
+  font-size:14px;
+  margin:8px 0;
+  min-height:36px;
 }
-.price{color:#d00000;font-weight:bold;margin-bottom:8px}
+.price{
+  color:#d00000;
+  font-weight:bold;
+  margin-bottom:8px;
+}
 .wa-btn{
-  background:#25D366;color:#fff;
-  text-decoration:none;text-align:center;
-  padding:8px;border-radius:6px;
-  font-weight:bold;font-size:14px
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-align:center;
+  padding:8px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 /* RIWAYAT */
 #historyBox{
-  background:#fff;padding:15px;border-radius:10px
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
 }
 #historyList li{
-  list-style:none;padding:8px 0;
-  border-bottom:1px solid #ddd;font-size:14px
+  list-style:none;
+  padding:8px 0;
+  border-bottom:1px solid #ddd;
+  font-size:14px;
 }
 .clear-btn{
-  margin-top:10px;background:#b00000;
-  color:#fff;border:none;
-  padding:8px 12px;border-radius:6px
-}
-
-/* FLOAT WA */
-.wa-float{
-  position:fixed;right:20px;bottom:20px;
-  width:55px;height:55px;border-radius:50%;
-  background:#25D366;color:#fff;
-  text-align:center;line-height:55px;
-  font-size:26px;text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,.3)
+  margin-top:10px;
+  background:#b00000;
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
 }
 
 /* FOOTER */
 footer{
-  background:#111;color:#fff;
-  text-align:center;padding:20px;
-  margin-top:30px;font-size:14px
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="navbar">
-  <div class="logo">RCB<span>Store</span></div>
+  <div class="logo">
+    <img src="images/logorcb.png" alt="Logo RCB">
+    <span>RCB Store</span>
+  </div>
   <input type="text" placeholder="Cari produk RCB...">
   <a href="#produk">Produk</a>
   <a href="#riwayat">Riwayat</a>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h1>RCB Racing Performance</h1>
-  <p>Sparepart Racing Original Malaysia</p>
+  <p>Sparepart Motor Racing Original Malaysia</p>
 </section>
 
 <!-- PRODUK -->
@@ -115,76 +168,55 @@ footer{
 <img src="images/rcbs1fl14mm.jpeg">
 <h3>Master Rem RCB S1 FL 14 mm</h3>
 <p class="price">Rp 1.050.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Master Rem RCB S1 FL 14 mm','1.050.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Master Rem RCB S1 FL 14 mm','1.050.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/rcbs1fl17mm.jpeg">
 <h3>Master Rem RCB S1 FL 17 mm</h3>
 <p class="price">Rp 1.350.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Master Rem RCB S1 FL 17 mm','1.350.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Master Rem RCB S1 FL 17 mm','1.350.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/kaliperrcb2piston.jpeg">
 <h3>Kaliper RCB 2 Piston</h3>
 <p class="price">Rp 700.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Kaliper RCB 2 Piston','700.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Kaliper RCB 2 Piston','700.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/kaliperrcb4piston.jpeg">
 <h3>Kaliper RCB 4 Piston</h3>
 <p class="price">Rp 1.200.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Kaliper RCB 4 Piston','1.200.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Kaliper RCB 4 Piston','1.200.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/velgrcb511.jpeg">
 <h3>Velg RCB 511</h3>
 <p class="price">Rp 1.850.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Velg RCB 511','1.850.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Velg RCB 511','1.850.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/brakehose.jpeg">
 <h3>Brake Hose RCB</h3>
 <p class="price">Rp 230.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Brake Hose RCB','230.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Brake Hose RCB','230.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 <div class="card">
 <img src="images/underbonemxking.jpeg">
 <h3>Underbone RCB MX King / Y15ZR</h3>
 <p class="price">Rp 2.200.000</p>
-<a class="wa-btn"
-onclick="buyProduct('Underbone RCB MX King','2.200.000')"
-href="https://wa.me/6282283104456"
-target="_blank">Beli via WhatsApp</a>
+<a class="wa-btn" onclick="buyProduct('Underbone RCB MX King','2.200.000')" href="https://wa.me/6282283104456" target="_blank">Beli via WhatsApp</a>
 </div>
 
 </div>
 </section>
 
-<!-- RIWAYAT -->
+<!-- RIWAYAT PEMBELIAN -->
 <section class="products" id="riwayat">
 <h2>Riwayat Pembelian</h2>
 <div id="historyBox">
@@ -198,27 +230,34 @@ RCB Store Indonesia<br>
 WhatsApp: 0822-8310-4456
 </footer>
 
-<a href="https://wa.me/6282283104456" class="wa-float" target="_blank">💬</a>
-
 <script>
 function buyProduct(name, price){
   let history = JSON.parse(localStorage.getItem("history")) || [];
   const date = new Date().toLocaleString("id-ID");
-  history.unshift(`${date} - ${name} (Rp ${price})`);
+  history.unshift(date + " - " + name + " (Rp " + price + ")");
   localStorage.setItem("history", JSON.stringify(history));
   renderHistory();
 }
+
 function renderHistory(){
-  const list = document.getElementById("historyList");
-  const history = JSON.parse(localStorage.getItem("history")) || [];
-  list.innerHTML = history.length
-    ? history.map(i=>`<li>${i}</li>`).join("")
-    : "<li>Belum ada pembelian</li>";
+  let history = JSON.parse(localStorage.getItem("history"));
+  if(!history || history.length === 0){
+    history = [
+      "01/01/2026 10.15 - Master Rem RCB S1 FL 14 mm (Rp 1.050.000)",
+      "03/01/2026 14.40 - Velg RCB 511 (Rp 1.850.000)",
+      "05/01/2026 09.30 - Underbone RCB MX King (Rp 2.200.000)"
+    ];
+    localStorage.setItem("history", JSON.stringify(history));
+  }
+  document.getElementById("historyList").innerHTML =
+    history.map(item => "<li>"+item+"</li>").join("");
 }
+
 function clearHistory(){
   localStorage.removeItem("history");
   renderHistory();
 }
+
 renderHistory();
 </script>
 
